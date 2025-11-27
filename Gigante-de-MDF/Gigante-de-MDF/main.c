@@ -347,6 +347,24 @@ void controle() {
 }
 //FIM ROTINA CONTROLE BLUETOOTH
 
+// RESET
+void botaoReset_init() {
+	DDRD &= ~(1 << PD3);   // entrada
+	PORTD |= (1 << PD3);   // pull-up
+
+	EICRA |= (1 << ISC11); // borda de descida
+	EIMSK |= (1 << INT1);  // habilita INT1
+}
+
+ISR(INT1_vect) {
+	// impede reset durante o bloqueio (opcional)
+	if (estado == 2) return;
+
+	vidas = 3;
+	atualizaLedsVida();
+}
+
+
 void fim(){
 	while(1){
 		pararMotores();
@@ -386,6 +404,10 @@ int main(void)
 	
     // GARANTE SAÍDAS LIMPAS
 	PORTB &= ~((1 << PB1) | (1 << PB2) | (1 << PB3) | (1 << PB4));	
+	
+	// RESET
+	
+	botaoReset_init();
 
     while (1) 
     {
