@@ -7,6 +7,7 @@
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <stdlib.h> // APENAS PARA RETORNAR OS VALORES INT SEM ERROS NO BLUETOOTH, UTILIZANDO itoa
 
 uint8_t vidas = 3;
 uint8_t fimDeJogo = 0;
@@ -303,14 +304,14 @@ void UART_SendString(const char *str) {
 
 void UART_SendInt(uint16_t value) {
 	char buffer[10];
-	itoa(value, buffer, 10);     // valor ? buffer ? base 10
+	itoa(value, buffer, 10);     // VALOR ? BUFFER ? BASE 10
 	UART_SendString(buffer);
 }
 
 void controle() {
 
-	if (UCSR0A & (1<<RXC0)) {   // só lê se tiver caractere disponível
-		comandoAtual = UDR0;    // salva o novo comando
+	if (UCSR0A & (1<<RXC0)) {   // SÓ LÊ SE TIVER ALGO EM UART
+		comandoAtual = UDR0;    // SALVA NOVO COMANDO
 	}
 
 	switch (comandoAtual) {
@@ -349,15 +350,15 @@ void controle() {
 
 // RESET
 void botaoReset_init() {
-	DDRD &= ~(1 << PD3);   // entrada
-	PORTD |= (1 << PD3);   // pull-up
+	DDRD &= ~(1 << PD3);   // ENTRADA
+	PORTD |= (1 << PD3);   // PULL-UP
 
-	EICRA |= (1 << ISC11); // borda de descida
-	EIMSK |= (1 << INT1);  // habilita INT1
+	EICRA |= (1 << ISC11); // BORDA DE DESCIDA
+	EIMSK |= (1 << INT1);  // HABILITE INT1
 }
 
 ISR(INT1_vect) {
-	// impede reset durante o bloqueio (opcional)
+	// IMPEDE RESET DURANTE O BLOQUEIO
 	if (estado == 2) return;
 
 	vidas = 3;
