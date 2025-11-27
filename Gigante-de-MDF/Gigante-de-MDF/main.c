@@ -145,14 +145,20 @@ void giraDireita() {
 	OCR0A = 200;   // motor 2
 }
 
-void girar360(){
-	// DEFINE DIREÇÃO: IN1=1, IN2=0 ; IN3=0, IN4=1
-	PORTB |=  (1<<PB1)|(1<<PB4);
-	PORTB &= ~((1<<PB2)|(1<<PB3));
-	// LIGA PWM
-	OCR0B = 200;
-	OCR0A = 200;
+void girar360() {
+	// Motor 1 horário: IN1=1, IN2=0
+	PORTB |=  (1<<PB1);
+	PORTB &= ~(1<<PB2);
+
+	// Motor 2 anti-horário: IN3=0, IN4=1
+	PORTB &= ~(1<<PB3);
+	PORTB |=  (1<<PB4);
+
+	// PWM
+	OCR0A = 200;  // motor 2
+	OCR0B = 200;  // motor 1
 }
+
 
 void curvaDireita(){
 	PORTB |= (1<<PB1)|(1<<PB3);
@@ -262,6 +268,7 @@ void executaPedidoSequencia(void){
 	seqRequisitada = 1;
 	estado = 1; // ENTRA NO GIRO DE 360 POR 1S
 	contador = 0;
+	comandoAtual = 'a';
 	girar360();
 	timer2_init(); // INICIA CONTAGEM  
 }
@@ -393,10 +400,8 @@ int main(void)
 		if (valorLDR > 900) {
 			luzAlta = 1; // LDR RECEBEU VALOR ALTO
 			executaPedidoSequencia();
-			PORTD |= (1 << PD2);
 		}else{
 			luzAlta = 0;
-			PORTD &= ~(1 << PD2);
 		}
 		if (luzAlta) {
 			// só perde vida se NÃO estiver executando a sequência
@@ -416,15 +421,9 @@ int main(void)
 			if (PINB & (1 << PB6)){
 		        executaPedidoSequencia();
 				vidas--;
-	        }
-	        // UART - se houver dado
-			
-		controle();  // CHAMA CONTROLE
-	        
-		}else{
-				
-			}
-			
+	        }			
+			controle();  // CHAMA CONTROLE    
+		}
 		if(fimDeJogo == 1){
 			fim();
 		}
