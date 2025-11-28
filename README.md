@@ -1,6 +1,6 @@
 🛠️ Gigante de MDF – Projeto de Programação de Hardware 2025 - Grupo Tesla 
 
-Projeto desenvolvido para a disciplina Programação de Hardware, utilizando o microcontrolador ATMega328(P/PB) e envolvendo mecânica, eletrônica e firmware embarcado.
+Projeto desenvolvido para a disciplina Programação de Hardware, utilizando o microcontrolador ATmega328P e envolvendo mecânica, eletrônica e firmware embarcado.
 
 📌 Sobre o Projeto
 O objetivo deste trabalho foi aplicar, na prática, os conteúdos estudados ao longo do semestre, criando um robô móvel (“Gigante de MDF”) capaz de:
@@ -27,7 +27,7 @@ O firmware foi desenvolvido inteiramente do zero, com base no datasheet oficial 
 O código atende às seguintes especificações:
 
 ✔️ Microcontrolador
-• ATMega328P
+• ATmega328P
 ✔️ Requisitos de Programação
 • Controle dos motores via PWM de hardware
 • Laser temporizado por Timer
