@@ -360,7 +360,6 @@ void botaoReset_init() {
 ISR(INT1_vect) {
 	// IMPEDE RESET DURANTE O BLOQUEIO
 	if (estado == 2) return;
-
 	vidas = 3;
 	atualizaLedsVida();
 }

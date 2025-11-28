@@ -2,7 +2,7 @@
 
 <item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-284,-76" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="-10.4889,-14.4796" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Gigante-de-MDF/Gigante-de-MDF/Debug/Gigante-de-MDF.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
 
-<item itemtype="LDR" CircId="LDR-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-84" rotation="0" hflip="1" vflip="1" label="LDR-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,30" valLabRot="0" Lux="910 Lux" Min_Lux="1e-12 Lux" Max_Lux="1000 Lux" Dial_Step="0 Lux" Gamma="0.8582" R1="127410 Ω" Slider="false" Scale="1" />
+<item itemtype="LDR" CircId="LDR-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-84" rotation="0" hflip="1" vflip="1" label="LDR-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,30" valLabRot="0" Lux="909 Lux" Min_Lux="1e-12 Lux" Max_Lux="1000 Lux" Dial_Step="0 Lux" Gamma="0.8582" R1="127410 Ω" Slider="false" Scale="1" />
 
 <item itemtype="Led" CircId="Led-8" mainComp="false" Show_id="false" Show_Val="false" Pos="-140,-28" rotation="0" hflip="1" vflip="1" label="Led-8" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
 
@@ -122,8 +122,6 @@
 
 <item itemtype="Connector" uid="Connector-312" startpinid="L293-74-3A" endpinid="mega328-1-PORTB3" pointList="-464,-120,-484,-120,-484,68,-200,68,-200,20,-244,20" />
 
-<item itemtype="Connector" uid="Connector-313" startpinid="L293-74-4A" endpinid="mega328-1-PORTB4" pointList="-464,-112,-500,-112,-500,76,-188,76,-188,12,-244,12" />
-
 <item itemtype="Connector" uid="Connector-314" startpinid="L293-74-34EN" endpinid="mega328-1-PORTD6" pointList="-464,-104,-472,-104,-472,20,-292,20" />
 
 <item itemtype="Connector" uid="Connector-320" startpinid="SerialTerm-118-pin0" endpinid="mega328-1-PORTD0" pointList="-320,-92,-304,-92,-304,-60,-292,-60" />
@@ -135,5 +133,7 @@
 <item itemtype="Connector" uid="Connector-324" startpinid="Resistor-120-rPin" endpinid="Push-119-pinP0" pointList="-412,-44,-404,-44" />
 
 <item itemtype="Connector" uid="Connector-325" startpinid="Ground-121-Gnd" endpinid="Resistor-120-lPin" pointList="-452,-20,-452,-44,-444,-44" />
+
+<item itemtype="Connector" uid="Connector-313" startpinid="L293-74-4A" endpinid="mega328-1-PORTB4" pointList="-464,-112,-500,-112,-500,76,-188,76,-188,12,-244,12" />
 
 </circuit>

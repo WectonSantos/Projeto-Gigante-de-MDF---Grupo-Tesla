@@ -763,7 +763,6 @@ ISR(INT1_vect) {
  55a:	80 91 11 01 	lds	r24, 0x0111	; 0x800111 <estado>
  55e:	82 30       	cpi	r24, 0x02	; 2
  560:	29 f0       	breq	.+10     	; 0x56c <__vector_2+0x34>
-
 	vidas = 3;
  562:	83 e0       	ldi	r24, 0x03	; 3
  564:	80 93 01 01 	sts	0x0101, r24	; 0x800101 <vidas>
