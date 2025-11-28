@@ -336,7 +336,7 @@ void controle() {
 		giraDireita();
 		break;
 
-		case 'T':    // STOP
+		case 'T':   
 		case 't':
 		pararMotores();
 		break;
