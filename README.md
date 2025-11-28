@@ -1,4 +1,4 @@
-🛠️ Gigante de MDF – Projeto de Programação de Hardware 2025 - Grupo Tesla \n
+🛠️ Gigante de MDF – Projeto de Programação de Hardware 2025 - Grupo Tesla 
 
 Projeto desenvolvido para a disciplina Programação de Hardware, utilizando o microcontrolador ATMega328(P/PB) e envolvendo mecânica, eletrônica e firmware embarcado.
 
@@ -40,7 +40,7 @@ O código atende às seguintes especificações:
 
 📚 Documentação
 A documentação completa do software foi gerada usando Doxygen e está disponível em:
-/documentacao/doxygen/
+/Documentacao/doxygen/
 
 👥 Integrantes – Grupo Tesla
 • Rafael Wippich
