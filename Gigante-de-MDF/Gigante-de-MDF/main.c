@@ -340,7 +340,12 @@ void controle() {
 		case 't':
 		pararMotores();
 		break;
-
+		
+		case 'X':
+		case 'x':
+			if (estado == 2) return;
+			vidas = 3;
+			atualizaLedsVida();
 		default:
 		// comando inválido -> não muda nada
 		break;
