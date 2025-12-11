@@ -2,7 +2,7 @@
 
 <item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-284,-76" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="-10.4889,-14.4796" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Gigante-de-MDF/Gigante-de-MDF/Debug/Gigante-de-MDF.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
 
-<item itemtype="LDR" CircId="LDR-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-84" rotation="0" hflip="1" vflip="1" label="LDR-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,30" valLabRot="0" Lux="909 Lux" Min_Lux="1e-12 Lux" Max_Lux="1000 Lux" Dial_Step="0 Lux" Gamma="0.8582" R1="127410 Ω" Slider="false" Scale="1" />
+<item itemtype="LDR" CircId="LDR-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-36,-84" rotation="0" hflip="1" vflip="1" label="LDR-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,30" valLabRot="0" Lux="945 Lux" Min_Lux="1e-12 Lux" Max_Lux="1000 Lux" Dial_Step="0 Lux" Gamma="0.8582" R1="127410 Ω" Slider="false" Scale="1" />
 
 <item itemtype="Led" CircId="Led-8" mainComp="false" Show_id="false" Show_Val="false" Pos="-140,-28" rotation="0" hflip="1" vflip="1" label="Led-8" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
 
@@ -23,12 +23,6 @@
 <item itemtype="Resistor" CircId="Resistor-18" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-132,-148" rotation="0" hflip="1" vflip="1" label="Resistor-18" idLabPos="-16,-24" labelrot="0" valLabPos="-6.36258,-27.731" valLabRot="0" Resistance="10 kΩ" />
 
 <item itemtype="Led" CircId="Led-23" mainComp="false" Show_id="false" Show_Val="false" Pos="-124,76" rotation="0" hflip="1" vflip="1" label="Led-23" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
-
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-51" mainComp="false" Show_id="false" Show_Val="false" Pos="-328,-28" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-51" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
-
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-53" mainComp="false" Show_id="false" Show_Val="false" Pos="-328,-4" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-53" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
-
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-54" mainComp="false" Show_id="false" Show_Val="false" Pos="-328,36" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-54" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
 
 <item itemtype="Probe" CircId="Probe-58" mainComp="false" Show_id="false" Show_Val="true" Pos="4,-100" rotation="-45" hflip="1" vflip="1" label="Probe-58" idLabPos="16,-16" labelrot="45" valLabPos="16,0" valLabRot="45" ShowVolt="true" Threshold="2.5 V" />
 
@@ -51,6 +45,8 @@
 <item itemtype="Resistor" CircId="Resistor-120" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-428,-44" rotation="0" hflip="1" vflip="1" label="Resistor-120" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
 
 <item itemtype="Ground" CircId="Ground-121" mainComp="false" Show_id="false" Show_Val="false" Pos="-452,-4" rotation="0" hflip="1" vflip="1" label="Ground-121" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-53" mainComp="false" Show_id="false" Show_Val="false" Pos="-328,-4" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-53" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="false" />
 
 <item itemtype="Node" CircId="Node-15" mainComp="false" Pos="-60,-28" />
 
@@ -80,8 +76,6 @@
 
 <item itemtype="Connector" uid="Connector-14" startpinid="Node-16-2" endpinid="Node-15-0" pointList="-60,-48,-60,-28" />
 
-<item itemtype="Connector" uid="Connector-130" startpinid="Fixed Voltage-51-outnod" endpinid="mega328-1-PORTD4" pointList="-312,-28,-292,-28" />
-
 <item itemtype="Connector" uid="Connector-149" startpinid="LDR-4-rPin" endpinid="Fixed Voltage-17-outnod" pointList="-20,-84,0,-84,0,176,-248,176" />
 
 <item itemtype="Connector" uid="Connector-187" startpinid="Ground-66-Gnd" endpinid="Resistor-18-lPin" pointList="-160,-164,-160,-148,-148,-148" />
@@ -101,10 +95,6 @@
 <item itemtype="Connector" uid="Connector-269" startpinid="LDR-4-lPin" endpinid="Node-114-0" pointList="-52,-84,-96,-84" />
 
 <item itemtype="Connector" uid="Connector-270" startpinid="Node-114-2" endpinid="Resistor-18-rPin" pointList="-96,-84,-96,-148,-116,-148" />
-
-<item itemtype="Connector" uid="Connector-280" startpinid="Fixed Voltage-54-outnod" endpinid="mega328-1-PORTB0" pointList="-312,36,-292,36" />
-
-<item itemtype="Connector" uid="Connector-284" startpinid="Fixed Voltage-53-outnod" endpinid="mega328-1-PORTB6" pointList="-312,-4,-292,-4" />
 
 <item itemtype="Connector" uid="Connector-282" startpinid="L293-74-12EN" endpinid="mega328-1-PORTD5" pointList="-464,-136,-564,-136,-564,12,-292,12" />
 
@@ -135,5 +125,7 @@
 <item itemtype="Connector" uid="Connector-325" startpinid="Ground-121-Gnd" endpinid="Resistor-120-lPin" pointList="-452,-20,-452,-44,-444,-44" />
 
 <item itemtype="Connector" uid="Connector-313" startpinid="L293-74-4A" endpinid="mega328-1-PORTB4" pointList="-464,-112,-500,-112,-500,76,-188,76,-188,12,-244,12" />
+
+<item itemtype="Connector" uid="Connector-326" startpinid="Fixed Voltage-53-outnod" endpinid="mega328-1-PORTB6" pointList="-312,-4,-292,-4" />
 
 </circuit>

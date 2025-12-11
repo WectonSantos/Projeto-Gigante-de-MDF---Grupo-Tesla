@@ -29,22 +29,16 @@ void ledsVida(){
 	PORTC |= (1<< PC2); // LIGANDO LED 1
 }
 // ROTINA QUE CONFIGURA OS MOTORES
-void motores(){ 
-	DDRB |= (1 << PB1); // MOTOR 1 SENTIDO HORÁRIO (IN1)
-	DDRB |= (1 << PB2); // MOTOR 1 SENTIDO ANTI-HORÁRIO (IN2)
-	DDRD |= (1 << PD5); // MOTOR 1 PWM (ENABLE)
-	
-	DDRB |= (1 << PB3); // MOTOR 2 SENTIDO HORÁRIO (IN3)
-	DDRB |= (1 << PB4); // MOTOR 2 SENTIDO ANTI-HORÁRIO (IN4)
-	DDRD |= (1 << PD6); // MOTOR 2 PWM	(ENABLE)
-	
-	//TESTE
-    // IN1–IN4 como saída
-    DDRB |= (1<<PB1)|(1<<PB2)|(1<<PB3)|(1<<PB4);
-    // ENA (PD5) e ENB (PD6) como saída, mas sem setar PORTD ainda
-    DDRD |= (1<<PD5)|(1<<PD6);
-	//TESTE
+void motores() {
+	DDRB |= (1<<PB1) | (1<<PB2) | (1<<PB3) | (1<<PB4);
+	DDRD |= (1<<PD5) | (1<<PD6);
+
+	// Desliga tudo ANTES de qualquer comando Bluetooth
+	PORTB &= ~((1<<PB1)|(1<<PB2)|(1<<PB3)|(1<<PB4));
+	OCR0A = 0;
+	OCR0B = 0;
 }
+
 
 // BOTÕES PREVIAMENTE QUE SERÃO TROCADOS PELO VALOR RECEBIDO DO CONTROLE
 void botoes(){
@@ -95,55 +89,43 @@ void atualizaLedsVida() {
 
 // ROTINA DOS MOTORES
 void ligaMotoresHorario(){		
-	// DEFINE DIREÇÃO: IN1=1, IN2=0 ; IN3=1, IN4=0
-	PORTB |=  (1<<PB1)|(1<<PB3);
-	PORTB &= ~((1<<PB2)|(1<<PB4));
+    // Motor esquerdo horário
+    PORTB |=  (1<<PB1);
+    PORTB &= ~(1<<PB2);
 
-	// LIGA PWM
-	OCR0B = 200;  
-	OCR0A = 200;   
+    // Motor direito horário
+    PORTB |=  (1<<PB3);
+    PORTB &= ~(1<<PB4);
 }
 
 void ligaMotoresAntiHorario(){
-	// DEFINE DIREÇÃO: IN1=0, IN2=1 ; IN3=0, IN4=1
-	PORTB |=  (1<<PB2)|(1<<PB4);
-	PORTB &= ~((1<<PB1)|(1<<PB3));
+    // Motor esquerdo anti-horário
+    PORTB |=  (1<<PB2);
+    PORTB &= ~(1<<PB1);
 
-	// LIGA PWM
-	OCR0B = 200; 
-	OCR0A = 200; 	
-}
-
-void ligaMotoresMeiaForca(){
-	// DEFINE DIREÇÃO
-	PORTB |=  (1<<PB1)|(1<<PB3);
-	PORTB &= ~((1<<PB2)|(1<<PB4));
-
-	// APLICANDO 50% DE FATOR DE CICLO
-	OCR0B = 128;   // motor 1
-	OCR0A = 128;   // motor 2
+    // Motor direito anti-horário
+    PORTB |=  (1<<PB4);
+    PORTB &= ~(1<<PB3);
 }
 
 void giraEsquerda() {
-	// MOTOR 1: ANTI-HORÁRIO (PB4)
-	// MOTOR 2: HORÁRIO (PB5)
-	PORTB |= (1 << PB1) | (1 << PB3);
-	PORTB &= ~((1 << PB2) | (1 << PB4));
+    // Motor esquerdo anti-horário
+    PORTB |=  (1<<PB2);
+    PORTB &= ~(1<<PB1);
 
-	// LIGA PWM
-	OCR0B = 200;   // motor 1
-	OCR0A = 200;   // motor 2
+    // Motor direito horário
+    PORTB |=  (1<<PB3);
+    PORTB &= ~(1<<PB4);
 }
 
 void giraDireita() {
-	// MOTOR 1: HORÁRIO (PB7)
-	// MOTOR 2: ANTI-HORÁRIO (PB0)
-	PORTB |= (1 << PB1) | (1 << PB6);
-	PORTB &= ~((1 << PB3) | (1 << PB4));
+    // Motor esquerdo horário
+    PORTB |=  (1<<PB1);
+    PORTB &= ~(1<<PB2);
 
-	// LIGA PWM
-	OCR0B = 200;   // motor 1
-	OCR0A = 200;   // motor 2
+    // Motor direito anti-horário
+    PORTB |=  (1<<PB4);
+    PORTB &= ~(1<<PB3);
 }
 
 void girar360() {
@@ -179,8 +161,9 @@ void curvaEsquerda(){
 void pararMotores() {
 	OCR0A = 0;
 	OCR0B = 0;
-	PORTB &= ~((1 << PB1) | (1 << PB6) | (1 << PB3) | (1 << PB4));
+	PORTB &= ~((1<<PB1)|(1<<PB2)|(1<<PB3)|(1<<PB4));
 }
+
 
 void verificaSentido(){
 	if (PIND & (1 << PD4)) {
@@ -271,6 +254,7 @@ void executaPedidoSequencia(void){
 	contador = 0;
 	comandoAtual = 'a';
 	girar360();
+	vidas--;
 	timer2_init(); // INICIA CONTAGEM  
 }
 //ROTINA CONTROLE BLUETOOTH
@@ -424,7 +408,7 @@ int main(void)
 		UART_SendString("\r\n");	
 		// debug ldr
 
-		if (valorLDR > 900) {
+		if (valorLDR > 100) {
 			luzAlta = 1; // LDR RECEBEU VALOR ALTO
 			executaPedidoSequencia();
 		}else{
