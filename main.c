@@ -1,14 +1,3 @@
-/*ESQUERDA
-B3 E B4
-
-DIREITA
-D5 E D6*/
-/*
- * projeto-prog-hardware.c
- *
- * Código revisado – Motores SEM PWM (GPIO)
- */ 
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdlib.h> 
