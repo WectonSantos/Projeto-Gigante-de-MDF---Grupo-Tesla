@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['uart_5finit_0',['UART_Init',['../main_8c.html#ad5cbed2a2222bb84e8b5c1caaa50634e',1,'main.c']]],
-  ['uart_5freceive_1',['UART_Receive',['../main_8c.html#a51f2cf23949f94f4b0f3b73381918d74',1,'main.c']]],
-  ['uart_5fsendint_2',['UART_SendInt',['../main_8c.html#a3cf0e66df618ca7a336cd8237f12031f',1,'main.c']]],
-  ['uart_5fsendstring_3',['UART_SendString',['../main_8c.html#a3d54817ce5409ef5576568ca41cce6ed',1,'main.c']]],
-  ['uart_5ftransmit_4',['UART_Transmit',['../main_8c.html#a924f152ef31f5c02dd6e55dcec6ac7ba',1,'main.c']]]
+  ['timer1_5finit_0',['timer1_init',['../main_8c.html#abb302081b7dbd40d0fea4bbe53fd9b7b',1,'main.c']]],
+  ['timer1_5fstop_1',['timer1_stop',['../main_8c.html#a8148e6dd819794fd8a7d22f49796c11f',1,'main.c']]],
+  ['timer2_5finit_2',['timer2_init',['../main_8c.html#a2cd8cee0c5bd8d8b2f528216f7dd487d',1,'main.c']]],
+  ['timer2_5fstop_3',['timer2_stop',['../main_8c.html#a0730547d803aa5321ee1c421597d85bb',1,'main.c']]]
 ];
